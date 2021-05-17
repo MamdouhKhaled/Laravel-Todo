@@ -15,19 +15,12 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required','min:10'],
-            'user_id' => ['required', 'numeric'],
+            'title' => ['required','string','min:10'],
+            'user_id' => [],
             'description' => [],
             'status' => [],
         ];
     }
-
-    public function messages()
-    {
-        return [
-            "title.required" => "Title Cannot be Empty..",
-            "title.min" => "Minimum Length is 10 characters",
-            "user_id.required" => "Must Be Authed User",
-        ];
-    }
 }
+
+
