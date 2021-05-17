@@ -23,10 +23,10 @@ class TodoFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => $this->faker->title(),
             'status' => (int) $this->faker->numberBetween(1,3),
             'description'=> $this->faker->text(),
-            'user_id' => User::factory()->create()->id
+            'user_id' => User::all()->random()->id
         ];
     }
 }
